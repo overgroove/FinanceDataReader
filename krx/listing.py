@@ -27,7 +27,7 @@ class KrxStockListing:
         r = requests.post(url)
         f = BytesIO(r.content)
 
-        df_listing = pd.read_html(url, header=0)[0]
+        df_listing = pd.read_html(f, header=0)[0]
         cols_ren = {'회사명':'Name', '종목코드':'Symbol', '업종':'Sector', '주요제품':'Industry', 
                             '상장일':'ListingDate', '결산월':'SettleMonth',  '대표자명':'Representative', 
                             '홈페이지':'HomePage', '지역':'Region', }
